@@ -97,10 +97,9 @@ jobs:
         install-deps: 'true'
         modules: 'qtcharts'
 
-    - name: install gcc on mac, required for conan's openblas package
-      run: |
-        brew install gcc
-  
+    - name: check if gfortran is installed
+      run: gfortran --version
+
     - name: Conan installation
       id: conan
       uses: turtlebrowser/get-conan@main
