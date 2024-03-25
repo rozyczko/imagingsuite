@@ -98,7 +98,7 @@ jobs:
         modules: 'qtcharts'
 
     - name: Install gfortran first
-      run: brew install gcc
+      run: brew reinstall gcc
 
     - name: check if gfortran is installed
       run: gfortran --version
