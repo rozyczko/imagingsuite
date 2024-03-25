@@ -97,6 +97,9 @@ jobs:
         install-deps: 'true'
         modules: 'qtcharts'
 
+    - name: Install gfortran first
+      run: brew install gcc
+
     - name: check if gfortran is installed
       run: gfortran --version
 
