@@ -39,10 +39,6 @@ jobs:
           #   c_compiler: clang
           #   cpp_compiler: clang++
           #   clang: 13
-            - os: flyci-macos-14-m1
-              c_compiler: clang
-              cpp_compiler: clang++
-              clang: 13
             - os: flyci-macos-14-m2
               c_compiler: clang
               cpp_compiler: clang++
