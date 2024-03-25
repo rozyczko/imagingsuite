@@ -31,18 +31,18 @@ jobs:
           #   c_compiler: cl
           #   cpp_compiler: cl
           #   cl: 17
-          # - os: ubuntu-latest
-          #   c_compiler: gcc
-          #   cpp_compiler: g++
-          #   gcc: 11
+          - os: ubuntu-latest
+            c_compiler: gcc
+            cpp_compiler: g++
+            gcc: 11
           # - os: macos-11
           #   c_compiler: clang
           #   cpp_compiler: clang++
           #   clang: 13
-            - os: flyci-macos-14-m2
-              c_compiler: clang
-              cpp_compiler: clang++
-              clang: 13
+            # - os: flyci-macos-14-m2
+            #   c_compiler: clang
+            #   cpp_compiler: clang++
+            #   clang: 13
         # exclude:
         #   - os: windows-2022
         #     c_compiler: gcc
@@ -97,11 +97,13 @@ jobs:
         install-deps: 'true'
         modules: 'qtcharts'
 
-    - name: Install gfortran first
-      run: brew reinstall gcc
+    # - name: Install gfortran first
+    #   run: brew reinstall gcc
 
-    - name: check if gfortran is installed
-      run: gfortran --version
+    - name: check if gcc/gfortran is installed
+      run: |
+        gfortran --version
+        gcc --version
 
     - name: Conan installation
       id: conan
