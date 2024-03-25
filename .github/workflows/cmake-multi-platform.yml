@@ -88,6 +88,8 @@ jobs:
     #   with:
     #     repository: neutronimaging/scripts
     #     path: scripts
+    - name: Install conda
+      uses: s-weigand/setup-conda@v1
 
     - name: Conan installation
       id: conan
